@@ -1,0 +1,2 @@
+def clearText(text):
+    

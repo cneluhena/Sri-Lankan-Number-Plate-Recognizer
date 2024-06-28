@@ -1,0 +1,26 @@
+<annotation>
+	<folder>set2</folder>
+	<filename>168.jpg</filename>
+	<path>D:\set2\168.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>720</width>
+		<height>752</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>license-plate</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>371</xmin>
+			<ymin>617</ymin>
+			<xmax>529</xmax>
+			<ymax>658</ymax>
+		</bndbox>
+	</object>
+</annotation>

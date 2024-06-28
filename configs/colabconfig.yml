@@ -1,0 +1,8 @@
+path: /content/drive/MyDrive/NumberPlateSegments
+train: images/train
+val: images/train
+
+names:
+  0: province
+  1: text
+  2: number

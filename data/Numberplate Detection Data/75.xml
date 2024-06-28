@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Numberplate</folder>
+	<filename>75.jpg</filename>
+	<path>D:\Numberplate\75.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>777</width>
+		<height>741</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>license-plate</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>324</xmin>
+			<ymin>505</ymin>
+			<xmax>457</xmax>
+			<ymax>590</ymax>
+		</bndbox>
+	</object>
+</annotation>
