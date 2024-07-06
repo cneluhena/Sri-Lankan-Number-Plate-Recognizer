@@ -23,21 +23,28 @@ class PlateReader:
         boxes = results[0].boxes
         boxes_copy = []
         index = -1
-        min_area = float('inf')
-        smallest_index = -1
+     
+        boxes_with_areas = []
 
-        # finding smallest box(province box)
+        #getting the area of each box
         for box in boxes:
             index += 1
             b = box.xyxy[0].tolist()
             area = (b[2] - b[0]) * (b[3] - b[1])
-            if area < min_area:
-                min_area = area
-                smallest_index = index
+            boxes_with_areas.append([index, area])
 
-        boxes_copy = list(boxes)
-        del boxes_copy[smallest_index]
+        #sorting the boxes based on the area
+        sorted_boxes = sorted(boxes_with_areas, key=lambda x: x[1], reverse=True)
+
+        #getting the two most largest boxes
+        largest_boxes = sorted_boxes[:2]
+        largest_boxes.reverse()  #reversing the list to get the boxes in the order they appear in the image
+        
+        #choosing the two largest boxes original boxes array
+        for box in largest_boxes:
+            boxes_copy.append(boxes[box[0]])
         return boxes_copy
+
 
     #preprocessing image before reading text
     def process_image(self, img):
@@ -49,18 +56,24 @@ class PlateReader:
         binary_img = cv2.dilate(img_gray, None, iterations=1)
         return binary_img
 
+
     #reading text from the image
     def read_text(self, boxes, img):
+        text = []
         for box in boxes: 
             try:
                 b = box.xyxy[0].tolist()
                 roi = img[int(b[1]):int(b[3]), int(b[0]):int(b[2])]
-                print(self.reader.readtext(roi)[0][1])
+                text.append(self.reader.readtext(roi)[0][1])
+                
             except:
                 continue
+        return text
     
+    #running the plate reader
     def run(self, image_name):
         img = self.read_image(image_name)
         boxes = self.extract_segment_coordinates(img)
         img = self.process_image(img)
-        self.read_text(boxes, img)
+        output = self.read_text(boxes, img)
+        return output
