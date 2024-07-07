@@ -2,8 +2,10 @@
 # Sri Lankan Number Plate Recognizer
 This Streamlit application is designed to read Sri Lankan number plates. A model trained using YOLO identifies the sections of the number plate, and each section is then read using the EasyOCR Python library. Currently, the app can accurately read the text on a Sri Lankan number plate. Future developments will include the ability to detect SL number plates in an image and read the text from them.
 
-
-
+#### You can view the project using the following url
+```
+https://sri-lankan-number-plate-recognizer.streamlit.app/
+```
 ## Getting Started
 #### 1. Clone the repository into the local environment
 ```
