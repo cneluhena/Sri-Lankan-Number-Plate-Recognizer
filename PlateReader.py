@@ -49,9 +49,8 @@ class PlateReader:
     #preprocessing image before reading text
     def process_image(self, img):
         img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)  #converting image to gray scale
-        img_gray = cv2.resize(img_gray, (img.shape[1]*3, img.shape[0]*3))  #resize image
+        img_gray = cv2.resize(img_gray, (img.shape[1], img.shape[0]))  #resize image
 
-        img = cv2.resize(img, (img.shape[1]*3, img.shape[0]*3))
         binary_img = cv2.threshold(img_gray, 110, 255, cv2.THRESH_BINARY_INV |cv2.THRESH_OTSU)[1]
         binary_img = cv2.dilate(img_gray, None, iterations=1)
         return binary_img
