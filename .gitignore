@@ -1,2 +1,5 @@
 images/
 data/
+archive(1)/
+__pycache__/
+tempCodeRunnerFile.py

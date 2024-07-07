@@ -12,7 +12,7 @@ class PlateReader:
 
     # reading the image
     def read_image(self, image_name):
-        img = cv2.imread(f'images/Plate Only/{image_name}')
+        img = cv2.imread(f'{image_name}')
         return img
 
 
