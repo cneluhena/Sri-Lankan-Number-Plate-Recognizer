@@ -43,7 +43,7 @@ Our system is currently designed to accurately detect and read Sri Lankan (SL) n
 The system is optimized for detecting text on cropped images of number plates only. It may not perform well on images where the number plate is part of a larger scene or is not clearly visible.
 
 #### Example Usage:
-Step 1:  Upload a cropped image of an SL number plate.
+Step 1:  Upload an image of a vehicle which includes a clear Sri Lankan number plate.
 
 Step 2: The system processes the image to identify and read the text.
 
